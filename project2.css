@@ -1,0 +1,118 @@
+.title {
+  font-size: 3rem;
+  color: #8749f2;
+  padding-top: 0.6em;
+  font-weight: 700;
+}
+.card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  background: transparent;
+  margin: 20px;
+}
+
+@media (min-width: 576px) {
+  .card {
+    width: 100%; /* Cards take full width on smaller screens */
+  }
+}
+
+.content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  /* gap: 20px;  */
+  border-radius: 10px;
+  background: linear-gradient(#ffffff, #ebebeb);
+  border: 2px solid transparent;
+
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  /* color: red; */
+}
+
+.content.dark {
+  color: white;
+  background: linear-gradient(#1f1f1f, #000000);
+
+  border: 2px solid transparent;
+}
+
+.content .heading {
+  font-weight: 700;
+  font-size: 32px;
+  margin: 0;
+}
+
+.content .para {
+  /* line-height: 1;   */
+}
+
+.content .btn {
+  color: #e8e8e8;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  /* background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%); */
+  background: linear-gradient(-45deg, #29eaf8 0%, #930fff 100%);
+
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(-45deg, #29eaf8 0%, #930fff 100%);
+  z-index: -1;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card:hover::before {
+  width: 100%;
+}
+
+.content:hover p {
+  color: white;
+}
+.card:hover {
+  box-shadow: none;
+}
+
+.card:hover .btn {
+  color: #212121;
+  background: #e8e8e8;
+}
+
+.content .btn:hover {
+  outline: 2px solid #e8e8e8;
+  background: transparent;
+  color: white;
+}
+
+.content .btn:active {
+  box-shadow: none;
+}
+
+.box {
+  padding-block: 5em;
+  /* position: relative; */
+  /* margin: 0; */
+  /* padding: 0; */
+}
